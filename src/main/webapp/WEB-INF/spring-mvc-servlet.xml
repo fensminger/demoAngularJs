@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="
+	 http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+	 http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd
+	 "> 
+
+	<!--  curl -i -H "Accept: application/xml"   http://localhost:8080/webstoredproc-springmvcrest/webstoredproc/first -->
+	<!--  curl -i -H "Accept: application/json"  http://localhost:8080/webstoredproc-springmvcrest/webstoredproc/first -->
+	<context:component-scan base-package="org.fer.angularjs.demo" />
+	<!-- <import resource="classpath:/webstoredproc-core.xml" /> -->
+
+	<bean
+		class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter">
+		<property name="messageConverters">
+			<list>
+				<ref bean="stringHttpMessageConverter" />
+				<!-- <ref bean="jacksonHttpMessageConverter" />  -->
+			    <ref bean="marshallingHttpMessageConverter" />
+			</list>
+		</property>
+	</bean>
+
+	<bean id="stringHttpMessageConverter"
+		class="org.springframework.http.converter.StringHttpMessageConverter" />
+
+	<bean id="jacksonHttpMessageConverter"
+		class="org.springframework.http.converter.json.MappingJacksonHttpMessageConverter" /> 
+
+	<bean id="marshallingHttpMessageConverter"
+		class="org.springframework.http.converter.xml.MarshallingHttpMessageConverter">
+		<property name="marshaller" ref="marshaller" />
+		<property name="unmarshaller" ref="marshaller" />
+	</bean>
+
+	<bean id="marshaller" class="org.springframework.oxm.jaxb.Jaxb2Marshaller">
+		<property name="contextPath" value="org.fer.angularjs.demo.model" />
+		<property name="mtomEnabled" value="true" />
+	</bean>
+
+</beans>
