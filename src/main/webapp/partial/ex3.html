@@ -1,10 +1,13 @@
 Demo 3 : {{demoName}}
 <div ng-controller="BindingCtrl">
-	Hello <input ng-model='nameb'> <hr/>
-	&ltspan ng:bind="name"&gt <span ng:bind="nameb"></span> <br/>
-	&ltspan ng_bind="name"&gt <span ng_bind="nameb"></span> <br/>
-	&ltspan ng-bind="name"&gt <span ng-bind="nameb"></span> <br/>
-	&ltspan data-ng-bind="name"&gt <span data-ng-bind="nameb"></span> <br/>
-	&ltspan x-ng-bind="name"&gt <span x-ng-bind="nameb"></span> <br/>
+	Hello <input ng-model='formulary.name'/><br/>
+	<textarea rows="5" cols="80" ng-model='formulary.descr'></textarea><br/>
+	<input ng-model='formulary.price'/> 
+	<hr/>
+	&ltspan ng:bind="name"&gt <span ng:bind="formulary.name"></span> <br/>
+	&ltspan ng_bind="name"&gt <span ng_bind="formulary.name"></span> <br/>
+	&ltspan ng-bind="name"&gt <span ng-bind="formulary.name"></span> <br/>
+	&ltspan data-ng-bind="name"&gt <span data-ng-bind="formulary.name"></span> <br/>
+	&ltspan x-ng-bind="name"&gt <span x-ng-bind="formulary.name"></span> <br/>
 	<button ng-click="clickOk()">Ok</button>
 </div>

@@ -4,7 +4,7 @@
 
 
 function TutorialMenuCtrl($scope, $http) {
-	$http.get('rest/menuTuto2').success(function(data) {
+	$http.get('rest/menuTuto').success(function(data) {
 		$scope.urlList = data.links;
 	});
     
@@ -26,9 +26,16 @@ function Demo1DetailCtrl($scope, $routeParams) {
 }
 
 function BindingCtrl($scope, $http) {
-	$scope.nameb = "Test...";
+	$http.get('rest/form').success(function(data) {
+		$scope.formulary = data;
+	});
 	
 	$scope.clickOk = function() {
-		alert($scope.nameb);
+		$http.post("rest/postForm", $scope.formulary)
+		.success(function(data, status, headers, config) {
+		    $scope.data = data;
+		}).error(function(data, status, headers, config) {
+		    $scope.status = status;
+		});
 	};
 }

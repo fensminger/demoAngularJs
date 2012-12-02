@@ -31,4 +31,7 @@ public class ObjectFactory {
     public Links createLinks() {
         return new Links();
     }
+    public Form createForm() {
+        return new Form();
+    }
 }
