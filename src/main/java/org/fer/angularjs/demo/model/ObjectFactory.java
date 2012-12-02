@@ -28,4 +28,7 @@ public class ObjectFactory {
     public Link createLink() {
         return new Link();
     }
+    public Links createLinks() {
+        return new Links();
+    }
 }
