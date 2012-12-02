@@ -4,7 +4,7 @@
 	<head>
 		<meta charset="utf-8">
 
-		<title>reveal.js - The HTML Presentation Framework</title>
+		<title>Présentation Angular JS</title>
 
 		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
 		<meta name="author" content="Hakim El Hattab">
@@ -36,18 +36,73 @@
 <div class="slides">
     <section>
         <section>
-            <h1>angularjs demo</h1>
-            <p>Template slide</p>
-        </section>
+            <h1>Présentation</h1>
+    		<img style="padding:15px;" class="AngularJS-large" src="http://angularjs.org/img/AngularJS-large.png">
+    		<br/> 
+    		git clone https://github.com/angular/angular.js.git   
+    		<aside class="notes">
+						Développer par Google.<br/>
+						Si vous êtes Ninja JS, vous pouvez postuler pour un poste à Mauntain View.<br/>
+			</aside>
+    	</section>
         <section>
-            <h2>Vers le Bas</h2>
+            <h2>Pourquoi ? Il en existe des dixaines...</h2>
+            <p class="fragment fade-in">Développer une application REST</p>
+           	<p class="fragment fade-in">Faire du templating côté client <br/>
+           	 Avoir du "binding" composants &lt;-&gt; javascript</p>
+           	<p class="fragment fade-in">On en entend de plus en plus parler.</p>
+           	<p class="fragment fade-in">A devoox, les participants à la présentation d'Angular JS étaient nombreux.</p>
+           	<p class="fragment fade-in">Développé par google : pérénité</p>
         </section>
     </section>
     <section>
-        <h2>Vers la droite</h2>
-        <div>
-            <br>
-        </div>
+    	<h2>Démo - Composants de l'Architecture</h2>
+    	<h3 style="padding-top: 10px;">Côté Web</h3>
+    	<p>Pour les composants graphiques : twitter bootstrap</p>
+    	<p>Pour le templating et la communication en JSON, évidemment Angular JS</p>
+    	<h3 style="padding-top: 50px;">Côté Serveur</h3>
+    	<p>REST avec Spring MVC</p>
+    </section>
+    <section>
+	    <section>
+	    	<h2>Mes premières impression</h2>
+	    	<h3 style="padding-top: 10px;">Les Plus</h3>
+	    	<p>Le templating se fait par annotation dans le code HTML.</p>
+	    	<p>Peu de Javascript à écrire pour l'utiliser</p>
+	    	<p>Basé sur JQuery. Du coup, il n'y a pas d'incompatibilité avec les composants graphiques JQuery.</p>
+			<p>Bonne documentation.</p>
+			<p>On trouve des réponses sur stackoverflow.</p>
+	    </section>
+	    <section>
+	    	<h2>Mes premières impression</h2>
+	    	<h3 style="padding-top: 50px;">Les moins</h3>
+	    	<p>Javascript : coût d'apprentissage.</p>
+	    	<p>Y a-t-il possibilité d'avoir la complétion JQuery, des annotations Angular JS dans Eclipse ?</p>
+	    </section>
+	</section>
+    <section>
+        <h2>Liens</h2>
+        <ul>
+        	<li>La présentation, les sources sont sur github<br/>
+        		<a href='https://github.com/fensminger/demoAngularJs' target='_blank'>https://github.com/fensminger/demoAngularJs</a></li>
+        	<li>
+        		Angular JS : 
+        		<a href="http://angularjs.org/" target="_blank">http://angularjs.org/</a>
+        	</li>
+        	<li>
+        		Bootstrap twitter : 
+        		<a href="http://twitter.github.com/bootstrap/" target="_blank">http://twitter.github.com/bootstrap/</a>
+        	</li>
+        	<li>
+        		Par Olivier Croisier : Développer une appli REST
+        		<a href="http://thecodersbreakfast.net/index.php?post/2012/07/30/D%C3%A9velopper-une-application-REST-avec-Spring-MVC-Angular.js" target="_blank">http://goo.gl/V52Ma</a>
+        	</li>
+        	<li>Reveal.js : <a href="https://github.com/hakimel/reveal.js" target="_blank">https://github.com/hakimel/reveal.js</a></li>
+        	<li>Angular JS et SEO : <a href="http://www.yearofmoo.com/2012/11/angularjs-and-seo.html" target="_blank">http://www.yearofmoo.com/2012/11/angularjs-and-seo.html</a></li>
+        </ul>
+    </section>
+    <section>
+    	<h1>Merci</h1>
     </section>
 </div>
 
@@ -81,6 +136,13 @@
 				]
 			});
 
+			Reveal.addEventListener( 'slidechanged', function( event ) {
+				// event.previousSlide, event.currentSlide, event.indexh, event.indexv
+				var notes = event.currentSlide.querySelector(".notes");
+				if(notes) {
+					console.info(notes.innerHTML.replace(/\n\s+/g,'\n'));
+				}
+			} );
 		</script>
 
 	</body>
