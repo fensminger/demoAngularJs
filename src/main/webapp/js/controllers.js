@@ -4,8 +4,8 @@
 
 
 function TutorialMenuCtrl($scope, $http) {
-	$http.get('rest/menuTuto').success(function(data) {
-		$scope.urlList = data;
+	$http.get('rest/menuTuto2').success(function(data) {
+		$scope.urlList = data.links;
 	});
     
 }

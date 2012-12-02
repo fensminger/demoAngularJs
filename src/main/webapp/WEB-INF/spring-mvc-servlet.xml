@@ -16,8 +16,8 @@
 		<property name="messageConverters">
 			<list>
 				<ref bean="stringHttpMessageConverter" />
-				<!-- <ref bean="jacksonHttpMessageConverter" />  -->
-			    <ref bean="marshallingHttpMessageConverter" />
+				<ref bean="jacksonHttpMessageConverter" /> 
+			    <!--  <ref bean="marshallingHttpMessageConverter" /> -->
 			</list>
 		</property>
 	</bean>
