@@ -24,3 +24,11 @@ function DemoDetailCtrl($scope, $routeParams) {
 function Demo1DetailCtrl($scope, $routeParams) {
 	$("#nav_ex1").addClass('active');
 }
+
+function BindingCtrl($scope, $http) {
+	$scope.nameb = "Test...";
+	
+	$scope.clickOk = function() {
+		alert($scope.nameb);
+	};
+}

@@ -1,1 +1,10 @@
 Demo 3 : {{demoName}}
+<div ng-controller="BindingCtrl">
+	Hello <input ng-model='nameb'> <hr/>
+	&ltspan ng:bind="name"&gt <span ng:bind="nameb"></span> <br/>
+	&ltspan ng_bind="name"&gt <span ng_bind="nameb"></span> <br/>
+	&ltspan ng-bind="name"&gt <span ng-bind="nameb"></span> <br/>
+	&ltspan data-ng-bind="name"&gt <span data-ng-bind="nameb"></span> <br/>
+	&ltspan x-ng-bind="name"&gt <span x-ng-bind="nameb"></span> <br/>
+	<button ng-click="clickOk()">Ok</button>
+</div>
