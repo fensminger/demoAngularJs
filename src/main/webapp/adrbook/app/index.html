@@ -1,0 +1,23 @@
+<!DOCTYPE HTML>
+<html ng-app="myApp">
+<head>
+    <meta http-equiv="Content-Type" content="charset=utf-8">
+    <script type="text/javascript" src="http://code.angularjs.org/1.0.1/angular-1.0.1.js"></script>
+    <script type="text/javascript" src="js/app.js"></script>
+    <script type="text/javascript" src="js/controllers.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Mon carnet d'adresses</title>
+</head>
+<body>
+<div class="container">
+    <div id="contacts-panel" ng-controller="ContactCtrl">
+        <h2>
+            Mon carnet d'adresses ({{contacts.length}} contacts)
+            <a class="btn btn-primary" ng-href="#/edit/">Ajouter</a>
+        </h2>
+        <div ng-view></div>
+    </div>
+</div>
+</body>
+</html>

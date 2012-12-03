@@ -1,0 +1,6 @@
+<ul class="unstyled">
+    <li class="well span6" ng-repeat="contact in contacts">
+        <contact-widget contact="contact"></contact-widget>
+        <a ng-href="#/edit/{{$index}}">Editer</a>
+    </li>
+</ul>
